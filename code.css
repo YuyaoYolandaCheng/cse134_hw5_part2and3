@@ -62,7 +62,7 @@ section[class*=box] p{
 }
 
 .box-1 { 
-    background-color: #dbb05f; 
+    background-color: #d1db5f; 
 }
 .box-2 { 
     background-color: #7891e2; 
@@ -74,7 +74,7 @@ section[class*=box] p{
   background-color: #9c61be; 
 }
 .box-5 { 
-  background-color: #df87c2; 
+  background-color: rgba(235, 163, 9, 0.591); 
 }
 
 .btn {
