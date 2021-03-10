@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Kaushan+Script&family=Lato&family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Kaushan+Script&family=Lato&family=Libre+Baskerville&family=Sriracha&display=swap');
+nav {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 0;
+  }
+  
+  nav ul {
+    text-align: center;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  nav ul li {
+    display: inline-block;
+  }
+  
+  nav ul li a {
+    padding: 20px;
+    font-family: 'Cardo', serif;
+	  font-family: 'Kaushan Script', cursive;
+ 	  font-family: 'Lato', sans-serif;
+	  font-family: 'Libre Baskerville', serif;
+    text-transform:uppercase;
+    color: rgba(52, 75, 134, 0.678);
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  nav ul li a:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(3, 24, 78);
+  }
+
+  @media(min-width:468px){
+    .container-1, .container-4{
+      display:flex;
+    }
+    
+    .container-2{
+      display:flex;  
+      justify-content:space-between;
+    }
+  }
+  
+  .container-3, .container-4{
+    display:flex;  
+    flex-wrap:wrap;
+    justify-content:space-between;
+  }
+
+  h3, .container-1, .container-2, .container-3, .container-4{
+    font-family: 'Cardo', serif;
+    font-family: 'Kaushan Script', cursive;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Libre Baskerville', serif;
+    font-family: 'Sriracha', cursive; 
+    padding:10px;
+  }
+  
+  .box-1{
+    flex:2;
+    order:2;
+  }
+  
+  
+  .container-2-box{
+    flex-basis: 27%;  
+  }
+  
+  .container-3-box{
+    flex-basis:12%;
+  }
+
+  .box-1 img{
+    width: 100vw;
+    height: 100vh;
+}
+
+.box-1 .title{
+    font-family: 'Cardo', serif;
+    font-family: 'Kaushan Script', cursive;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Libre Baskerville', serif;
+    position: absolute;
+    text-align: center;
+    left: 8vw;
+    top: 60vh;
+    font-size: 5vw;
+    color: #fff;
+}
+
+h3{
+  text-align: center;
+}

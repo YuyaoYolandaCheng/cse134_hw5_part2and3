@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Libre+Baskerville&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Dosis:300,400");
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Kaushan+Script&family=Lato&family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Kaushan+Script&family=Lato&family=Libre+Baskerville&family=Lovers+Quarrel&family=Sriracha&display=swap');
+
+@media(min-width:800px){
+  .container-1{
+    display:flex;
+  }
+  
+  .container-2{
+    display:flex;  
+    justify-content:space-between;
+  }
+}
+
+.container-1, .container-2, .container-3{
+  font-family: 'Cardo', serif;
+  font-family: 'Kaushan Script', cursive;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Libre Baskerville', serif;
+  font-family: 'Lovers Quarrel', cursive;
+  font-family: 'Sriracha', cursive;
+}
+
+.box-1 img{
+    width: 100vw;
+    height: 50vh;
+}
+
+.box-1 .title{
+    font-family: 'Cardo', serif;
+    font-family: 'Kaushan Script', cursive;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Libre Baskerville', serif;
+    position: absolute;
+    text-align: center;
+    right: 8vw;
+    top: 60vh;
+    font-size: 5vw;
+}
+
+.box-1{
+  flex:2;
+  order:2;
+}
+
+.container-2-box{
+  flex-basis: 30%;  
+}
+
+.container-2-box img{
+    width: 300px;
+}
+
+.container-3-box { 
+margin: 2rem; 
+}
+
+.container-3-box p { 
+line-height: 1.8; 
+}
+
+.container-3-box .curve { 
+width: 100%; 
+height: auto;
+min-width: 150px;
+max-width: 200px;
+float: left;
+margin-right:2rem; 
+border-radius: 50%;
+-webkit-shape-outside:circle(50%);
+}
+
+nav {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 0;
+}
+
+nav ul {
+  text-align: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  padding: 20px;
+  font-family: 'Cardo', serif;
+  font-family: 'Kaushan Script', cursive;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Libre Baskerville', serif;
+  text-transform:uppercase;
+  color: rgba(52, 75, 134, 0.678);
+  font-size: 18px;
+  text-decoration: none;
+  display: block;
+}
+
+nav ul li a:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(3, 24, 78);
+}
+
+
