@@ -7,7 +7,7 @@ var row = null;
 if(window.localStorage.length > 0){
     for (var key in window.localStorage) {
         var str = localStorage[key];
-        if(typeof(str) == "string" && str.includes("form")){
+        if(typeof(str) == "string"){
         var res = str.split("#");
         
         var old_table = document.getElementById("crudlist").getElementsByClassName("content")[0];
@@ -63,7 +63,7 @@ add.onclick = function(){
             <a href="#" onClick='myDelete(this)'><i class="fa fa-trash"></i></a>`;
 
         myPrompt1.style.display = "none";
-        window.localStorage.setItem("form " + form.title, "{title#"+ form.title + "#date#" + form.date + "#summary#" + form.summary+ "#author#" + form.author + "#}");
+        window.localStorage.setItem("form" + form.title, "{title#"+ form.title + "#date#" + form.date + "#summary#" + form.summary+ "#author#" + form.author + "#}");
     }
 
     cancel_p1.onclick = function(){
@@ -112,7 +112,7 @@ function myEdit(button){
 
         myPrompt2.style.display = "none";
 
-        window.localStorage.setItem("form "+clean1, "{title#" + clean1 + "#date#" + clean2 + "#summary#" + clean3+ "#author#" + clean4 + "#}");
+        window.localStorage.setItem("form"+clean1, "{title#" + clean1 + "#date#" + clean2 + "#summary#" + clean3+ "#author#" + clean4 + "#}");
     }   
 
     cancelPrompt2.onclick = function() {
@@ -138,7 +138,7 @@ function myDelete(button){
         list.deleteRow(row.rowIndex);
         myConfirm.style.display = "none";
 
-        window.localStorage.removeItem("form "+row.cells[1].innerHTML);
+        window.localStorage.removeItem("form"+row.cells[1].innerHTML);
     }
     
     cancelConfirm.onclick = function() {
