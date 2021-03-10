@@ -14,7 +14,7 @@ if(window.localStorage.length > 0){
         var old_add = old_table.insertRow(old_table.length);
         old_add.insertCell(0).innerHTML = res[1];
         old_add.insertCell(1).innerHTML = res[3];
-        old_add.insertCell(2).innerHTML = res[5];
+        old_add.insertCell(2).innerHTML = res[6];
         old_add.insertCell(3).innerHTML = `<a href="#" onClick='myEdit(this)'><i class="fa fa-edit"></i></a>
             <a href="#" onClick='myDelete(this)'><i class="fa fa-trash"></i></a>`;
         }
