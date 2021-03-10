@@ -5,8 +5,8 @@ var form = {};
 var row = null;
 
 if(window.localStorage.length > 0){
-    if(localStorage.getItem("gotrue.user")){
-        document.getElementsByClassName("form_action--button").display = "block";
+    if(typeof(localStorage.getItem("gotrue.user")) == "string"){
+        document.getElementByClass("form_action--button").display = "block";
     }
 }
 
