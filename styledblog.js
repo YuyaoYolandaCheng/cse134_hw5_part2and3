@@ -89,7 +89,7 @@ function myEdit(button){
     myPrompt2.style.display = "block";
 
     okPrompt2.onclick = function() {
-        window.localStorage.removeItem("form"+row.cells[0].innerHTML);
+        window.localStorage.removeItem("form"+row.cells[1].innerHTML);
         title_input = document.getElementById("title_p2").value;
         let clean1 = DOMPurify.sanitize(title_input);
         if(clean1 != null){
