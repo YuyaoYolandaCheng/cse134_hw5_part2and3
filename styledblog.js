@@ -5,6 +5,12 @@ var form = {};
 var row = null;
 
 if(window.localStorage.length > 0){
+    if(localStorage.getItem("gotrue.user")){
+        document.getElementByClass("form_action--button").display = "block";
+    }
+}
+
+if(window.localStorage.length > 0){
     for (var key in window.localStorage) {
         var str = localStorage[key];
         if(typeof(str) == "string" && str.includes("author")){
