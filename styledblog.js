@@ -6,6 +6,7 @@ var row = null;
 
 if(window.localStorage.length > 0){
     if(typeof(localStorage.getItem("gotrue.user")) == "string"){
+        console.log("yes");
         document.getElementsByClassName("form_action--button").display = "inline-block";
     }
 }
