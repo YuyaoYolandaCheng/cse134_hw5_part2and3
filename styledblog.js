@@ -4,8 +4,6 @@ var add = document.getElementById("add");
 var form = {};
 var row = null;
 
-location.reload();
-
 if(window.localStorage.length > 0){
     if(typeof(localStorage.getItem("gotrue.user")) == "string"){
         document.getElementById("add").style.display = "inline-block";
