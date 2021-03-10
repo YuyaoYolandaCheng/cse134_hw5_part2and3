@@ -52,8 +52,9 @@ nav {
 	-moz-font-smoothing:antialiased;
 	-o-font-smoothing:antialiased;
 	text-rendering:optimizeLegibility;
-	max-width:500px;
-	width:100%;
+	/* max-width:500px; */
+	width: 90%;
+  height: 90%;
   margin:0 auto;
   padding:0;
   position:relative;
