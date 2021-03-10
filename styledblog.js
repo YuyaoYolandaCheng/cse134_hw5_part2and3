@@ -67,7 +67,7 @@ add.onclick = function(){
 
         var new_table = document.getElementById("crudlist").getElementsByClassName("content")[0];
         var new_add = new_table.insertRow(new_table.length);
-        new_add.insertCell(0).innerHTML = form.author;
+        new_add.insertCell(0).innerHTML = split2;
         new_add.insertCell(1).innerHTML = form.title;
         new_add.insertCell(2).innerHTML = form.date;
         new_add.insertCell(3).innerHTML = form.summary;
