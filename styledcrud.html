@@ -1,168 +1,94 @@
-@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Kaushan+Script&family=Lato&family=Libre+Baskerville&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.6/purify.js"></script>
+    <title>Styled CRUD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <link type="text/css" rel="stylesheet" href="styledcrud.css">
+</head>
 
-nav {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 60px 0;
-    text-align: center;
-  }
-  
-  nav ul {
-    margin:0;
-    padding:0;
-    margin: 0 auto;
-    text-align: center;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
-  }
-  
-  nav ul li {
-    margin: 0 auto;
-    display: inline-block;
-    text-align: center;
-  }
-  
-  nav ul li a {
-    margin: 0 auto;
-    text-align: center;
-    padding: 20px;
-    font-family: 'Cardo', serif;
-	  font-family: 'Kaushan Script', cursive;
- 	  font-family: 'Lato', sans-serif;
-	  font-family: 'Libre Baskerville', serif;
-    text-transform:uppercase;
-    color: rgba(52, 75, 134, 0.678);
-    font-size: 18px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  nav ul li a:hover {
-    margin: 0 auto;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    background: rgba(255, 255, 255, 0.1);
-    color: rgba(3, 24, 78);
-  }
+<body>
+    <section class="navbar">
+        <nav>
+            <ul class="menu">
+                <li class="item"><a href="index.html">Home</a></li>
+                <li class="item"><a href="code.html">Codes</a></li>
+                <li class="item"><a href="fashion.html">Fashion</a></li>
+                <li class="item"><a href="life.html">Life</a></li>
+                <li class="item"><a href="comment.html">Contact</a></li>
+                <li class="item"><a href="about.html">About</a></li>
+                <li class="item"><a href="styledcrud.html">Posts</a></li>
+            </ul>
+        </nav>
+    </section>
 
-h1{
-    font-family: 'Akaya Telivigala', cursive;
-    background-color: rgb(241, 200, 111); 
-    color: white;
-    text-align: center;
-    font-size: 30px;
-}
+    <section>
+        <div class="multiple-buttons">
+            <h1 class="label">Please log in before posting</h1>
+            <div data-netlify-identity-button></div>
+        </div>
+    </section>
 
-#crudlist {
-    font-family: 'Akaya Telivigala', cursive;
-    border-collapse: collapse;
-    width: 100%;
-    font-size: 3vw;
-}
 
-td, th{
-    text-align: center;
-    border: 2px solid rgb(241, 200, 111);
-    padding: 10px;
-  }
+<h1>Please enter different titles</h1>
+<div class="form_action--button">
+    <button id = "add">Add</button>
+</div>
+               
+<table id="crudlist">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Summary</th>
+            <th>Action</th>
+        </tr>
+    </thead>
 
-tr:nth-child(even){
-    background-color: rgb(128, 171, 177);
-}
+    <tbody class = "content"></tbody>
+</table>
 
-tr:hover {
-    background-color: linen;
-}
 
-th, dialog{
-    font-family: 'Akaya Telivigala', cursive;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    text-align: center;
-    background-color: rgb(241, 200, 111);
-    color: white;
-}
+    <div id="myPrompt1">
+        <dialog open class="modalContentPrompt1">
+            Please enter the info <br>
+            Post Title
+            <input type = "text" id = "title_p1"><br>
+            Post Date
+            <input type = "datetime-local" id = "date_p1"><br>
+            Post Summary
+            <textarea id = "summary_p1"></textarea><br>
+            <button id = "ok_p1">Ok</button>
+            <button id = "cancel_p1">Cancel</button>
+        </dialog>
+    </div>
 
-input, textarea{
-    font-family: 'Akaya Telivigala', cursive;
-    color: rgb(128, 171, 177);
-    border: solid 1px rgb(128, 171, 177);
-}
+    <div id="myPrompt2">
+        <dialog open class="modalContentPrompt2">
+            Please enter the updated info <br>
+            Post Title
+            <input type = "text" id = "title_p2"><br>
+            Post Date
+            <input type = "datetime-local" id = "date_p2"><br>
+            Post Summary
+            <textarea id = "summary_p2"></textarea><br>
+            <button id = "ok_p2">Ok</button>
+            <button id = "cancel_p2">Cancel</button>
+        </dialog>
+    </div>
 
-#add {
-    font-size: 5vw;
-    font-family: 'Akaya Telivigala', cursive;
-    background-color: rgb(241, 200, 111);
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-}
+        <div id="myConfirm">
+            <dialog open class="modalContentConfirm">
+                Do you confirm this?
+                <button id = "ok_c">Ok</button>
+                <button id = "cancel_c">Cancel</button>
+              </dialog>
+        </div>
 
-#add:hover{
-    background-color: rgb(128, 171, 177);
-}
-
-button{
-    font-size: 3vw;
-    font-family: 'Akaya Telivigala', cursive;
-    background-color: rgb(241, 200, 111);
-    border: none;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-}
-
-button:hover {
-    background-color: rgb(128, 171, 177);
-}
-
-#summary_p1, #summary_p2{
-    width: 30vw;
-    height: 10vh;
-}
-
-#myConfirm, #myPrompt1, #myPrompt2{
-    display: none;
-    width: 50%; 
-  } 
-
-  [data-netlify-identity-button] ul {
-    text-align: center;
-    font-family: 'Akaya Telivigala', cursive;
-    }
-    [data-netlify-identity-button] li:first-child {
-    margin-right: 16px;
-    }
-    [data-netlify-identity-button] li {
-    list-style-type: none;
-    display: inline-block;
-    }
-    [data-netlify-identity-button] a {
-    display: block;
-    position: relative;
-    width: 192px;
-    height: 24px;
-    padding: 8px;
-    outline: 0;
-    cursor: pointer;
-    border-radius: 4px;
-    background-color: rgb(241, 200, 111);;
-    color: white;
-    transition: background-color 0.2s ease;
-    font-size: 30px;
-    font-weight: 500;
-    line-height: 24px;
-    text-align: center;
-    text-decoration: none;
-    white-space: nowrap;
-    }
-    [data-netlify-identity-button] a:hover,
-    [data-netlify-identity-button] a:focus {
-    background-color: rgb(128, 171, 177);
-    text-decoration: none;
-    }
+    <script type="text/javascript" src="styledblog.js"></script>
+    
+</body>
+</html>
