@@ -53,17 +53,10 @@ add.onclick = function(){
         if(neat3 != null){
             form["summary"] = neat3;
         } 
-
-        author_add = document.getElementById("author_p1").value;
-        let neat4 = DOMPurify.sanitize(author_add);
-        if(neat4 != null){
-            form["author"] = neat4;
-        } 
         
         var user_info = localStorage.getItem("gotrue.user");
         var split1 = user_info.split("\"");
         var split2 = split1[37];
-        console.log(split2);
 
         var new_table = document.getElementById("crudlist").getElementsByClassName("content")[0];
         var new_add = new_table.insertRow(new_table.length);
@@ -75,14 +68,13 @@ add.onclick = function(){
             <a href="#" onClick='myDelete(this)'><i class="fa fa-trash"></i></a>`;
 
         myPrompt1.style.display = "none";
-        window.localStorage.setItem("form" + form.title, "{title#"+ form.title + "#date#" + form.date + "#summary#" + form.summary+ "#author#" + form.author + "#}");
+        window.localStorage.setItem("form" + form.title, "{title#"+ form.title + "#date#" + form.date + "#summary#" + form.summary+ "#author#" + split2 + "#}");
     }
 
     cancel_p1.onclick = function(){
         myPrompt1.style.display = "none";
     }
 
-    document.getElementById("author_p1").value = '';
     document.getElementById("summary_p1").value = '';
     document.getElementById("date_p1").value = '';
     document.getElementById("title_p1").value = '';
@@ -116,22 +108,20 @@ function myEdit(button){
             row.cells[3].innerHTML = clean3;
         }
 
-        author_input = document.getElementById("author_p2").value;
-        let clean4 = DOMPurify.sanitize(author_input);
-        if(clean4 != null){
-            row.cells[0].innerHTML = clean4;
-        }
+        var user_info = localStorage.getItem("gotrue.user");
+        var split1 = user_info.split("\"");
+        var split2 = split1[37];
+        row.cells[0].innerHTML = split2;
 
         myPrompt2.style.display = "none";
 
-        window.localStorage.setItem("form"+clean1, "{title#" + clean1 + "#date#" + clean2 + "#summary#" + clean3+ "#author#" + clean4 + "#}");
+        window.localStorage.setItem("form"+clean1, "{title#" + clean1 + "#date#" + clean2 + "#summary#" + clean3+ "#author#" + split2 + "#}");
     }   
 
     cancelPrompt2.onclick = function() {
         myPrompt2.style.display = "none";
     }
 
-    document.getElementById("author_p2").value = '';
     document.getElementById("title_p2").value = '';
     document.getElementById("date_p2").value = '';
     document.getElementById("summary_p2").value = '';
