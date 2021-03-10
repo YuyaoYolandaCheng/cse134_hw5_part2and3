@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@700&family=Kaushan+Script&family=Lato&family=Libre+Baskerville&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+
+nav {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  nav ul {
+    margin:0;
+    padding:0;
+    margin: 0 auto;
+    text-align: center;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 25%, rgba(255, 255, 255, 0.2) 75%, rgba(255, 255, 255, 0) 100%);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  nav ul li {
+    margin: 0 auto;
+    display: inline-block;
+    text-align: center;
+  }
+  
+  nav ul li a {
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Cardo', serif;
+	  font-family: 'Kaushan Script', cursive;
+ 	  font-family: 'Lato', sans-serif;
+	  font-family: 'Libre Baskerville', serif;
+    text-transform:uppercase;
+    color: rgba(52, 75, 134, 0.678);
+    font-size: 18px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  nav ul li a:hover {
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(3, 24, 78);
+  }
+
+h1{
+    font-family: 'Akaya Telivigala', cursive;
+    background-color: rgb(241, 200, 111); 
+    color: white;
+    text-align: center;
+    font-size: 30px;
+}
+
+#crudlist {
+    font-family: 'Akaya Telivigala', cursive;
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 3vw;
+}
+
+td, th{
+    text-align: center;
+    border: 2px solid rgb(241, 200, 111);
+    padding: 10px;
+  }
+
+tr:nth-child(even){
+    background-color: rgb(128, 171, 177);
+}
+
+tr:hover {
+    background-color: linen;
+}
+
+th, dialog{
+    font-family: 'Akaya Telivigala', cursive;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    background-color: rgb(241, 200, 111);
+    color: white;
+}
+
+input, textarea{
+    font-family: 'Akaya Telivigala', cursive;
+    color: rgb(128, 171, 177);
+    border: solid 1px rgb(128, 171, 177);
+}
+
+#add {
+    font-size: 5vw;
+    font-family: 'Akaya Telivigala', cursive;
+    background-color: rgb(241, 200, 111);
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#add:hover{
+    background-color: rgb(128, 171, 177);
+}
+
+button{
+    font-size: 3vw;
+    font-family: 'Akaya Telivigala', cursive;
+    background-color: rgb(241, 200, 111);
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover {
+    background-color: rgb(128, 171, 177);
+}
+
+#summary_p1, #summary_p2{
+    width: 30vw;
+    height: 10vh;
+}
+
+#myConfirm, #myPrompt1, #myPrompt2{
+    display: none;
+    width: 50%; 
+  } 
+
+  [data-netlify-identity-menu] ul {
+    text-align: center;
+    font-family: 'Akaya Telivigala', cursive;
+    }
+    [data-netlify-identity-menu] li:first-child {
+    margin-right: 16px;
+    }
+    [data-netlify-identity-menu] li {
+    list-style-type: none;
+    display: inline-block;
+    }
+    [data-netlify-identity-menu] a {
+    display: block;
+    position: relative;
+    width: 192px;
+    height: 24px;
+    padding: 8px;
+    outline: 0;
+    cursor: pointer;
+    border-radius: 4px;
+    background-color: rgb(241, 200, 111);;
+    color: white;
+    transition: background-color 0.2s ease;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    }
+    [data-netlify-identity-menu] a:hover,
+    [data-netlify-identity-menu] a:focus {
+    background-color: rgb(128, 171, 177);
+    text-decoration: none;
+    }
