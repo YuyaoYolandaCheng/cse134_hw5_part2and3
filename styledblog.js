@@ -62,7 +62,7 @@ add.onclick = function(){
         
         var user_info = localStorage.getItem("gotrue.user");
         var split1 = user_info.split("\"");
-        var split2 = split1[19];
+        var split2 = split1[37];
         console.log(split2);
 
         var new_table = document.getElementById("crudlist").getElementsByClassName("content")[0];
