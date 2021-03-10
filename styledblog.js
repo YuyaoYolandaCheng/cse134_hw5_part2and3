@@ -8,14 +8,15 @@ if(window.localStorage.length > 0){
     for (var key in window.localStorage) {
         var str = localStorage[key];
         if(typeof(str) == "string"){
-        var res = str.split(":");
+        var res = str.split("#");
         
         var old_table = document.getElementById("crudlist").getElementsByClassName("content")[0];
         var old_add = old_table.insertRow(old_table.length);
-        old_add.insertCell(0).innerHTML = res[1];
-        old_add.insertCell(1).innerHTML = res[3];
-        old_add.insertCell(2).innerHTML = res[6];
-        old_add.insertCell(3).innerHTML = `<a href="#" onClick='myEdit(this)'><i class="fa fa-edit"></i></a>
+        old_add.insertCell(0).innerHTML = res[7];
+        old_add.insertCell(1).innerHTML = res[1];
+        old_add.insertCell(2).innerHTML = res[3];
+        old_add.insertCell(3).innerHTML = res[5];
+        old_add.insertCell(4).innerHTML = `<a href="#" onClick='myEdit(this)'><i class="fa fa-edit"></i></a>
             <a href="#" onClick='myDelete(this)'><i class="fa fa-trash"></i></a>`;
         }
       }
@@ -46,22 +47,30 @@ add.onclick = function(){
             form["summary"] = neat3;
         } 
 
+        author_add = document.getElementById("author_p1").value;
+        let neat4 = DOMPurify.sanitize(author_add);
+        if(neat4 != null){
+            form["author"] = neat4;
+        } 
+
         var new_table = document.getElementById("crudlist").getElementsByClassName("content")[0];
         var new_add = new_table.insertRow(new_table.length);
-        new_add.insertCell(0).innerHTML = form.title;
-        new_add.insertCell(1).innerHTML = form.date;
-        new_add.insertCell(2).innerHTML = form.summary;
-        new_add.insertCell(3).innerHTML = `<a href="#" onClick='myEdit(this)'><i class="fa fa-edit"></i></a>
+        new_add.insertCell(0).innerHTML = form.author;
+        new_add.insertCell(1).innerHTML = form.title;
+        new_add.insertCell(2).innerHTML = form.date;
+        new_add.insertCell(3).innerHTML = form.summary;
+        new_add.insertCell(4).innerHTML = `<a href="#" onClick='myEdit(this)'><i class="fa fa-edit"></i></a>
             <a href="#" onClick='myDelete(this)'><i class="fa fa-trash"></i></a>`;
 
         myPrompt1.style.display = "none";
-        window.localStorage.setItem("form" + form.title, "{title:"+ form.title + ":date:" + form.date + ":summary: " + form.summary+":}");
+        window.localStorage.setItem("form" + form.title, "{title#"+ form.title + "#date#" + form.date + "#summary#" + form.summary+ "#author#" + form.author + "#}");
     }
 
     cancel_p1.onclick = function(){
         myPrompt1.style.display = "none";
     }
 
+    document.getElementById("author_p1").value = '';
     document.getElementById("summary_p1").value = '';
     document.getElementById("date_p1").value = '';
     document.getElementById("title_p1").value = '';
@@ -80,29 +89,37 @@ function myEdit(button){
         title_input = document.getElementById("title_p2").value;
         let clean1 = DOMPurify.sanitize(title_input);
         if(clean1 != null){
-            row.cells[0].innerHTML = clean1;
+            row.cells[1].innerHTML = clean1;
         }
 
         date_input = document.getElementById("date_p2").value;
         let clean2 = DOMPurify.sanitize(date_input);
         if(clean2 != null){
-            row.cells[1].innerHTML = clean2;
+            row.cells[2].innerHTML = clean2;
         }
 
         summary_input = document.getElementById("summary_p2").value;
         let clean3 = DOMPurify.sanitize(summary_input);
         if(clean3 != null){
-            row.cells[2].innerHTML = clean3;
+            row.cells[3].innerHTML = clean3;
+        }
+
+        author_input = document.getElementById("author_p2").value;
+        let clean4 = DOMPurify.sanitize(author_input);
+        if(clean4 != null){
+            row.cells[0].innerHTML = clean4;
         }
 
         myPrompt2.style.display = "none";
 
-        window.localStorage.setItem("form"+clean1, "{title:" + clean1 + ":date: " + clean2 + ":summary: " + clean3+":}");
+        window.localStorage.setItem("form"+clean1, "{title#" + clean1 + "#date#" + clean2 + "#summary#" + clean3+ "#author#" + clean4 + "#}");
     }   
 
     cancelPrompt2.onclick = function() {
         myPrompt2.style.display = "none";
     }
+
+    document.getElementById("author_p2").value = '';
     document.getElementById("title_p2").value = '';
     document.getElementById("date_p2").value = '';
     document.getElementById("summary_p2").value = '';
@@ -121,7 +138,7 @@ function myDelete(button){
         list.deleteRow(row.rowIndex);
         myConfirm.style.display = "none";
 
-        window.localStorage.removeItem("form"+row.cells[0].innerHTML);
+        window.localStorage.removeItem("form"+row.cells[1].innerHTML);
     }
     
     cancelConfirm.onclick = function() {

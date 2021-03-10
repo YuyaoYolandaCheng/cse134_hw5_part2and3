@@ -50,9 +50,17 @@ nav {
 h1{
     font-family: 'Akaya Telivigala', cursive;
     background-color: rgb(241, 200, 111); 
-    color: white;
+    color: black;
     text-align: center;
     font-size: 30px;
+}
+
+h2{
+    font-family: 'Akaya Telivigala', cursive;
+    background-color: rgb(241, 200, 111); 
+    color: white;
+    text-align: center;
+    font-size: 25px;
 }
 
 #crudlist {
