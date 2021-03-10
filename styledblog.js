@@ -7,7 +7,7 @@ var row = null;
 if(window.localStorage.length > 0){
     if(typeof(localStorage.getItem("gotrue.user")) == "string"){
         console.log("yes");
-        document.getElementById("add").display = "inline-block";
+        document.getElementById("add").style.display = "inline-block";
     }
 }
 
