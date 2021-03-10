@@ -7,7 +7,7 @@ var row = null;
 if(window.localStorage.length > 0){
     for (var key in window.localStorage) {
         var str = localStorage[key];
-        if(typeof(str) == "string" && str.includes("form"){
+        if(typeof(str) == "string" && str.includes("form")){
         var res = str.split("#");
         
         var old_table = document.getElementById("crudlist").getElementsByClassName("content")[0];
