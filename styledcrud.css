@@ -174,7 +174,3 @@ button:hover {
     background-color: rgb(128, 171, 177);
     text-decoration: none;
     }
-
-.form_action--button{
-    display: none;
-}
