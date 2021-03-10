@@ -107,7 +107,7 @@ input, textarea{
     color: white;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: none;
 }
 
 #add:hover{
