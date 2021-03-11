@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body style="display: block; justify-content: center;">
+        <section style="display: flex; flex-direction: column; justify-content: center;">
+            <button id="del_button">DELETE</button>
+        </section>
+        <div>
+            <output id = "response" style = "white-space: pre; font-family: monospace;"></output>
+        </div>
+    </body>
+</html>
+
+
+<script type="module">
+    import * as Module from './http.js';
+
+    document.getElementById('del_button').addEventListener('click', Module.deleteRequest)
+
+</script>

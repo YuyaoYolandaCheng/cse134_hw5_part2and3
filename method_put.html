@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <body style="display: block; justify-content: center;">
+        <section style="display: flex; flex-direction: column; justify-content: center;">
+            <form
+                id = "put_form"
+                accept-charset="UTF-8"
+                action="https://httpbin.org/put"
+                autocomplete="off"
+                method="PUT"
+                target="_blank">
+                    <p>Title</p>
+                    <p>
+                        <input name="title" type="text" value="Blog Title" />
+                    </p>
+                    <p>Body</p>
+                    <p>
+                        <textarea form="put_form" name="body" cols="30" rows="2">Long text area for the content of the blog.</textarea>
+                    </p>
+                    <input name="id" type="hidden" value="123" />
+                    <input name="date" type="hidden" id="datePicker">
+
+                    <p>
+                        <input type="submit" value="Submit">
+                    </p>
+            </form>
+            <button id="put_button">PUT</button>
+        </section>
+        <div>
+        <output id = "response" style = "white-space: pre; font-family: monospace;"></output>
+        </div>
+    </body>
+</html>
+
+
+<script type="module">
+    document.getElementById('datePicker').value = new Date().toLocaleDateString();
+
+    import * as Module from './http.js';
+    document.getElementById('put_button').addEventListener('click', Module.putRequest)
+
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <body style="display: flex; justify-content: center;">
+        <section style="display: flex; flex-direction: column; justify-content: center;">
+            <form
+                id = "get_form"
+                accept-charset="UTF-8"
+                action="https://httpbin.org/get"
+                autocomplete="off"
+                method="GET"
+                target="_blank">
+                    <p>Title</p>
+                    <p>
+                        <input name="title" type="text" value="Blog Title" />
+                    </p>
+                    <p>Body</p>
+                    <p>
+                        <textarea form="get_form" name="body" cols="30" rows="2">Long text area for the content of the blog.</textarea>
+                    </p>
+                    <input name="id" type="hidden" value="123" />
+                    <input name="date" type="hidden" id="datePicker">
+                    <p>
+                        <input type="submit" value="Submit">
+                    </p>
+            </form>
+            <button id="get_button">GET</button>
+        </section>
+        <output id = "response" style = "white-space: pre; font-family: monospace;"></output>
+    </body>
+</html>
+
+<script type="module">
+    document.getElementById('datePicker').value = new Date().toLocaleDateString();
+
+    import * as Module from './http.js';
+    document.getElementById('get_button').addEventListener('click', Module.getRequest)
+</script>
