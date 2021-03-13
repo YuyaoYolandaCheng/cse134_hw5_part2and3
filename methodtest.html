@@ -1,17 +1,46 @@
+<!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Method Test</title>
-</head>
+    <body style="display: block; justify-content: center;">
+        <section style="display: flex; flex-direction: column; justify-content: center;">
+            <form
+                id = "form"
+                accept-charset="UTF-8"
+                action="https://httpbin.org/post"
+                autocomplete="off"
+                method="POST"
+                target="_blank">
+                    <p>Title</p>
+                    <p>
+                        <input name="title" type="text" value="Blog Title"/>
+                    </p>
+                    <p>Body</p>
+                    <p>
+                        <textarea form="form" name="body" cols="30" rows="2">Long text area for the content of the blog.</textarea>
+                    </p>
+                    <input name="id" type="hidden" value="123"/>
+                    <input name="date" type="hidden" id="datePicker">
 
-<body>
-    <form>
-        <label for = "id">ID:</label><br>
-        <input type = "number" id = "id" name = "id"><br>
-        <label for = "article_name">Article Name:</label><br>
-        <input type = "text" id = "article_name" name = "article_name"><br>
-        <label for = "article_body">Article Body</label><br>
-        <input type = "text" id = "article_body" name = "article_body"><br>
-    </form>
-</body>
+            </form>
+            <button id="post_button">POST</button>
+            <button id="put_button">PUT</button>
+            <button id="del_button">DELETE</button>
+            <button id="get_button">GET</button>
+
+        </section>
+        
+        <div>
+            <output id = "response" style = "white-space: pre; font-family: monospace;"></output>
+        </div>
+    </body>
 </html>
+
+
+<script type="module">
+    document.getElementById('datePicker').value = new Date().toLocaleDateString();
+
+    import * as Module from './http.js';
+    document.getElementById('post_button').addEventListener('click', Module.postRequest)
+    document.getElementById('put_button').addEventListener('click', Module.putRequest)
+    document.getElementById('del_button').addEventListener('click', Module.deleteRequest)
+    document.getElementById('get_button').addEventListener('click', Module.getRequest)
+</script>
